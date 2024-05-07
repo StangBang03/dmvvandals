@@ -3161,12 +3161,12 @@
 /* Banner */
 
 	#banner {
-		background-attachment: fixed;
+		background-attachment: scroll,							fixed;
 		background-color: #666;
-		background-image: url("../../images/banner-desktop.jpg");
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+		background-position: top left,						center center;
+		background-repeat: repeat,							no-repeat;
+		background-size: auto,							cover;
 		color: #fff;
 		padding: 12em 0 20em 0;
 		text-align: center;
@@ -3738,14 +3738,6 @@
 		/* Banner */
 
 			#banner {
-				background-attachment: fixed;
-				background-color: #666;
-				background-image: url("../../images/banner-mobile.jpg");
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-				color: #fff;
-				text-align: center;
 				padding: 4em 0;
 			}
 
@@ -3888,15 +3880,7 @@
 		/* Banner */
 
 			#banner {
-				background-attachment: fixed;
-				background-color: #666;
-				background-image: url("../../images/banner-mobile.jpg");
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-				color: #fff;
-				text-align: center;
-				padding: 4em 0;
+				padding: 5em 3em 4em 3em;
 			}
 
 		/* Main */
