@@ -3738,7 +3738,14 @@
 		/* Banner */
 
 			#banner {
+				background-attachment: fixed;
+				background-color: #666;
 				background-image: url("../../images/banner-mobile.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				color: #fff;
+				text-align: center;
 				padding: 4em 0;
 			}
 
@@ -3881,8 +3888,15 @@
 		/* Banner */
 
 			#banner {
-				padding: 5em 3em 4em 3em;
+				background-attachment: fixed;
+				background-color: #666;
 				background-image: url("../../images/banner-mobile.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				color: #fff;
+				text-align: center;
+				padding: 4em 0;
 			}
 
 		/* Main */
