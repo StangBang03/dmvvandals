@@ -122,8 +122,7 @@
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
-		color: #e89980;
+		color: #CFAE70;
 		text-decoration: none;
 	}
 
@@ -3303,7 +3302,7 @@
 /* CTA */
 
 	#cta {
-		background: #e89980;
+		background: #CFAE70;
 		color: #f9e6df;
 		padding: 3.5em 0 4em 0;
 		text-align: center;
