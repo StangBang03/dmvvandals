@@ -3162,7 +3162,7 @@
 	#banner {
 		background-attachment: fixed;
 		background-color: #666;
-		background-image: url("../../images/pic03.jpg");
+		background-image: url("../../images/banner-large.jpg");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -3737,7 +3737,7 @@
 		/* Banner */
 
 			#banner {
-				background-image: url("../../images/banner.jpg");
+				background-image: url("../../images/banner-small.jpg");
 				padding: 4em 0;
 			}
 
@@ -3880,7 +3880,7 @@
 		/* Banner */
 
 			#banner {
-				background-image: url("../../images/banner.jpg");
+				background-image: url("../../images/banner-small.jpg");
 				padding: 5em 3em 4em 3em;
 			}
 
