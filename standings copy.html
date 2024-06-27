@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Results and Full Schedule</title>
+		<title>Standings</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,7 +16,7 @@
 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html">DMV Vandals</a> est. 2024</h1>
+					<h1><a href="standings.html">Standings</h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
@@ -29,13 +29,10 @@
 											<li><a href="https://www.facebook.com/dcwoodbaseball">Facebook</a></li>
 											<li><a href="https://www.youtube.com/@GENEticSportsNetwork">YouTube</a></li>
 										</ul>
-									<li><a href="https://www.leaguelineup.com/welcome.asp?url=fcbarons">Falls Church Barons</a></li>
-									<li><a href="results.html">Schedule</a></li>
+									<li><a href="results.html">Previous Results</a></li>
 									<li><a href="standings.html">Standings</a></li>
-									<li><a href="#">Stats</a>
-										<ul>
-											<li><a href="battingstats.html">Batting</a></li>
-											<li><a href="pitchingstats.html">Pitching</a></li>
+									<li><a href="stats.html">Stats</a></li>
+									<li><a href="schedule.html">Upcoming Games</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -50,11 +47,10 @@
 				<section id="main" class="container">
 					<section class="box special">
 					<header>
-						<h2>Previous Results and Full Schedule</h2>
+						<h2>DC Wood Standings</h2>
 					</header>
 					<div class="box" align="center">
-						<div class="sportsengine">
-							<iframe class="responsive-iframe-sportsengine" src="https://season-microsites.ui.sportsengine.com/seasons/65b13cdfcb3af800967a4998/schedule2/teams/65b6a7738968a1b0abf16dd5?tab=schedule"></iframe>
+						<div class="results" id="results">
 						</div>
 					</div>
 					</section>
@@ -77,6 +73,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+			<script src="assets/js/batting.js"></script>
 
 	</body>
 </html>

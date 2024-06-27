@@ -1967,7 +1967,7 @@
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 5em);
-		width: 60em;
+		width: 75em;
 	}
 
 		.container.xsmall {
@@ -2673,28 +2673,43 @@
 	table {
 		margin: 0 0 2em 0;
 		width: 100%;
+		font-size: .75em;
+		font-weight: 400;
+		color: black;
 	}
 
 		table tbody tr {
 			border: solid 1px #e5e5e5;
-			border-left: 0;
-			border-right: 0;
 		}
-
+	
+		table tbody tr:hover {
+          		background-color: #ffff99;
+		}
+			
+		table tbody tr>th:first-child,tr>td:first-child {
+  			position: sticky;
+  			left: 0;
+			background-color: #f8f8f8;
+		}
+			/*
 			table tbody tr:nth-child(2n + 1) {
 				background-color: #f8f8f8;
-			}
-
+			}*/
+		
 		table td {
-			padding: 0.75em 0.75em;
+			padding: 0 0.75em 0 0.25em;
+			border: solid 1px #e5e5e5;
+			border-left: solid 1px #e5e5e5;
+			border-right: solid 1px #e5e5e5;
 		}
 
 		table th {
-			color: #646464;
+			color: black;
 			font-size: 0.9em;
-			font-weight: 300;
-			padding: 0 0.75em 0.75em 0.75em;
+			font-weight: 400;
+			padding: 0 0.75em 0.75em 0.25em;
 			text-align: left;
+			background-color: #f8f8f8;
 		}
 
 		table thead {
@@ -2730,6 +2745,7 @@
 			table.alt tfoot {
 				border-top: 0;
 			}
+
 
 /* Button */
 
@@ -3248,6 +3264,27 @@
 				padding: 1em 0 1.25em 0;
 			}
 			
+			.results{
+				overflow-x:auto;			
+				white-space: nowrap;
+				border: solid 1px #e5e5e5;
+			}
+
+			
+			/* .results th{
+				position: sticky;
+				top: 0;
+				overflow-x:auto;			
+				white-space: nowrap;
+				background: #f8f8f8; 
+			} */
+
+			/* .results tr>th:first-child,tr>td:first-child {
+ 				position: sticky;
+				left: 0;
+				background: #f8f8f8;
+			} */
+
 			.sportsengine{
   				position: relative;
  				width: 100%;
