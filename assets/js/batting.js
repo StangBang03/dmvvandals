@@ -8,7 +8,7 @@ $(document).ready(function() {
     // Initial data retrieval and table rendering
     $.ajax({
       type: "GET",
-      url: "http://api.iscoresports.com/teamwebsite/cumulativestats.php",
+      url: "https://api.iscoresports.com/teamwebsite/cumulativestats.php",
       data: { s: sport, t: team, p: password, json: "1" },
       dataType: "jsonp",
       success: function(data) {
