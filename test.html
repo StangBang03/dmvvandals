@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch ESPN Fantasy Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>ESPN Fantasy Data</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th>Draft Pick</th>
+                <th>Player</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchData() {
+            const proxyUrl = 'https://api.allorigins.win/get?url=';
+            const apiUrl = 'https://fantasy.espn.com/apis/v3/games/ffl/leagueHistory/112536?view=mDraftDetail';
+
+            try {
+                const response = await fetch(proxyUrl + encodeURIComponent(apiUrl));
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+
+                const result = await response.json();
+                const data = JSON.parse(result.contents);
+                console.log(data); // Debugging line to check the response
+                populateTable(data);
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        function populateTable(data) {
+            const tableBody = document.getElementById('data-table').querySelector('tbody');
+
+            data[0].teams.forEach(team => {
+                team.draftDetail.picks.forEach(pick => {
+                    const row = document.createElement('tr');
+
+                    const teamNameCell = document.createElement('td');
+                    teamNameCell.textContent = team.location + ' ' + team.nickname;
+                    row.appendChild(teamNameCell);
+
+                    const draftPickCell = document.createElement('td');
+                    draftPickCell.textContent = pick.round + '-' + pick.pick;
+                    row.appendChild(draftPickCell);
+
+                    const playerCell = document.createElement('td');
+                    playerCell.textContent = pick.playerId; // You might need to map playerId to player name
+                    row.appendChild(playerCell);
+
+                    tableBody.appendChild(row);
+                });
+            });
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>

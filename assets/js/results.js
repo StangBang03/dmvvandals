@@ -23,7 +23,7 @@ $(document).ready(function() {
       
       var html = '<table>';
       // Table header
-      html += '<tr><th>Date</th><th>Visitor</th><th>Home</th><th>Visitor Score</th><th>Home Score</th><th>Result</th></tr>';
+      html += '<tr><th>Date</th><th>Matchup<th>Score</th><th>Result</th></tr>';
   
       // Loop through each game
       games.each(function() {
@@ -47,11 +47,8 @@ $(document).ready(function() {
         // Construct table rows
         html += '<tr>';
         html += '<td>' + date + '</td>';
-        //html += '<td>' + name + '</td>';
-        html += '<td>' + visitor + '</td>';
-        html += '<td>' + home + '</td>';
-        html += '<td>' + visitorScore + '</td>';
-        html += '<td>' + homeScore + '</td>';
+        html += '<td>' + name + '</td>';
+        html += '<td>' + (visitorScore + ' - ' + homeScore) + '</td>';
         html += '<td>' + result + '</td>';
         html += '</tr>';
       });
