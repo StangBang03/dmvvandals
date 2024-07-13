@@ -5,19 +5,42 @@ $(document).ready(function() {
     var team = 'dmvvandals'; // Change this to your team name
     var password = 'Pa$$word1!'; // Change this to your password
   
-    // Initial data retrieval and table rendering
-    $.ajax({
-      type: "GET",
-      url: "https://api.iscoresports.com/teamwebsite/cumulativestats.php",
-      data: { s: sport, t: team, p: password, json: "1" },
-      dataType: "jsonp",
-      success: function(data) {
-        showResults(data);
-      },
-      error: function() {
-        alert("An error occurred in the request");
-      }
-    });
+  // Create dropdown menu
+  var dropdownHtml = `
+      <select id="leagueSelect">
+          <option value="9A1BA060-2FC1-4C7F-B9F6-CB70F122FFBF">2024 Spring/Summer</option>
+          <option value="294CA57A-307B-48FB-BD2C-9B8256C0EE13" selected>2024 Spring/Summer Playoffs</option>
+      </select>
+  `;
+  $('#dropdownContainer').html(dropdownHtml);
+
+  // Set initial league value
+  var league = $('#leagueSelect').val();
+
+  // Function to fetch and display data
+  function fetchData() {
+      $.ajax({
+          type: "GET",
+          url: "https://api.iscoresports.com/teamwebsite/cumulativestats.php",
+          data: { s: sport, t: team, p: password, lg: league, json: "1" },
+          dataType: "jsonp",
+          success: function(data) {
+              showResults(data);
+          },
+          error: function() {
+              alert("An error occurred in the request");
+          }
+      });
+  }
+
+  // Fetch data initially
+  fetchData();
+
+  // Update league value and fetch data on dropdown change
+  $('#leagueSelect').change(function() {
+      league = $(this).val();
+      fetchData();
+  });
   
     function showResults(data) {
       var players = data.PLAYER;
@@ -83,7 +106,7 @@ $(document).ready(function() {
         html += '<td>' + win + '</td>';
         html += '<td>' + loss + '</td>';
         html += '<td>' + era + '</td>';
-	html += '<td>' + pgames + '</td>';
+	      html += '<td>' + pgames + '</td>';
         html += '<td>' + gs + '</td>';
         html += '<td>' + gf + '</td>';
         html += '<td>' + sv + '</td>';
