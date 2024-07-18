@@ -1,10 +1,8 @@
 $(document).ready(function() {
-  // Hardcoded values for sport, team, and password
-  var sport = 'baseball'; // Change this to your desired sport
-  var team = 'dmvvandals'; // Change this to your team name
-  var password = 'Pa$$word1!'; // Change this to your password
+  var sport = 'baseball'; 
+  var team = 'dmvvandals'; 
+  var password = 'Pa$$word1!'; 
 
-  // Create dropdown menu
   var dropdownHtml = `
       <select id="leagueSelect">
           <option value="9A1BA060-2FC1-4C7F-B9F6-CB70F122FFBF">2024 Spring/Summer</option>
@@ -13,125 +11,198 @@ $(document).ready(function() {
   `;
   $('#dropdownContainer').html(dropdownHtml);
 
-  // Set initial league value
   var league = $('#leagueSelect').val();
 
-  // Function to fetch and display data
   function fetchData() {
-      $.ajax({
-          type: "GET",
-          url: "https://api.iscoresports.com/teamwebsite/cumulativestats.php",
-          data: { s: sport, t: team, p: password, lg: league, json: "1" },
-          dataType: "jsonp",
-          success: function(data) {
-              showResults(data);
-          },
-          error: function() {
-              alert("An error occurred in the request");
-          }
-      });
+    $.ajax({
+      type: "GET",
+      url: "https://api.iscoresports.com/teamwebsite/cumulativestats.php",
+      data: { s: sport, t: team, p: password, lg: league, json: "1" },
+      dataType: "jsonp",
+      success: function(data) {
+        showResults(data);
+      },
+      error: function() {
+        alert("An error occurred in the request");
+      }
+    });
   }
 
-  // Fetch data initially
   fetchData();
 
-  // Update league value and fetch data on dropdown change
   $('#leagueSelect').change(function() {
-      league = $(this).val();
-      fetchData();
+    league = $(this).val();
+    fetchData();
   });
 
   function showResults(data) {
-      var players = data.PLAYER;
+    var players = data.PLAYER;
 
-      // Filter out players where bgames is 0
-      players = players
-          .map(player => player['@attributes'])
-          .filter(player => (player.bat_games || 0) > 0);
+    players = players
+      .map(player => player['@attributes'])
+      .filter(player => (player.bat_games || 0) > 0);
 
-      // Separate players with lastName = '-' and others
-      var regularPlayers = players.filter(player => player.lastName !== '-');
-      var dashPlayers = players.filter(player => player.lastName === '-');
+    var regularPlayers = players.filter(player => player.lastName !== '-');
+    var dashPlayers = players.filter(player => player.lastName === '-');
 
-      // Sort regular players by last name
-      regularPlayers.sort((a, b) => (a.lastName || '').localeCompare(b.lastName || ''));
+    regularPlayers.sort((a, b) => (a.lastName || '').localeCompare(b.lastName || ''));
 
-      // Combine the arrays with dashPlayers at the end
-      players = regularPlayers.concat(dashPlayers);
+    players = regularPlayers.concat(dashPlayers);
 
-      var html = '<table>';
-      // Table header
-      html += '<tr><th>Name</th><th>G</th><th>PA</th><th>AB</th><th>R</th><th>H</th><th>2B</th><th>3B</th><th>HR</th><th>RBI</th><th>SB</th><th>CS</th><th>BB</th><th>SO</th><th>SOL</th><th>BA</th><th>OBP</th><th>SLG</th><th>OPS</th><th>TB</th><th>GDP</th><th>XBH</th><th>HBP</th><th>SAC</th><th>IBB</th><th>ROE</th><th>LOB</th><th>BARISP</th><th>BABIP</th></tr>';
+    var html = '<table>';
+    html += '<thead><tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">G</th><th onclick="sortTable(2)">PA</th><th onclick="sortTable(3)">AB</th><th onclick="sortTable(4)">R</th><th onclick="sortTable(5)">H</th><th onclick="sortTable(6)">2B</th><th onclick="sortTable(7)">3B</th><th onclick="sortTable(8)">HR</th><th onclick="sortTable(9)">RBI</th><th onclick="sortTable(10)">SB</th><th onclick="sortTable(11)">CS</th><th onclick="sortTable(12)">BB</th><th onclick="sortTable(13)">SO</th><th onclick="sortTable(14)">SOL</th><th onclick="sortTable(15)">BA</th><th onclick="sortTable(16)">OBP</th><th onclick="sortTable(17)">SLG</th><th onclick="sortTable(18)">OPS</th><th onclick="sortTable(19)">TB</th><th onclick="sortTable(20)">GDP</th><th onclick="sortTable(21)">XBH</th><th onclick="sortTable(22)">HBP</th><th onclick="sortTable(23)">SAC</th><th onclick="sortTable(24)">IBB</th><th onclick="sortTable(25)">ROE</th><th onclick="sortTable(26)">LOB</th><th onclick="sortTable(27)">BARISP</th><th onclick="sortTable(28)">BABIP</th></tr></thead><tbody>';
 
-      // Loop through each player
-      for (var i = 0; i < players.length; i++) {
-          var player = players[i];
-          var firstName = player.firstName || '';
-          var lastName = player.lastName || '';
-          var bgames = player.bat_games || 0;
-          var pa = player.bat_pa || 0;
-          var ab = player.bat_ab || 0;
-          var runs = player.bat_runs || 0;
-          var hits = player.bat_hits || 0;
-          var b2 = player.bat_2b || 0;
-          var b3 = player.bat_3b || 0;
-          var hr = player.bat_hr || 0;
-          var rbi = player.bat_rbi || 0;
-          var sb = player.bat_sb || 0;
-          var cs = player.bat_cs || 0;
-          var bb = player.bat_bb || 0;
-          var so = player.bat_strikeouts || 0;
-          var kl = player.bat_ko_looking || 0;
-          var avg = parseFloat(player.bat_avg || 0).toFixed(3).replace(/^0+/, ''); // Remove leading zeros
-          var obp = parseFloat(player.bat_obp || 0).toFixed(3).replace(/^0+/, ''); // Remove leading zeros
-          var slg = parseFloat(player.bat_slg || 0).toFixed(3).replace(/^0+/, ''); // Remove leading zeros
-          var ops = parseFloat(player.bat_ops || 0).toFixed(3).replace(/^0+/, ''); // Remove leading zeros
-          var tb = player.bat_tb || 0;
-          var gidp = player.bat_gidp || 0;
-          var xbh = player.bat_xbh || 0;
-          var hbp = player.bat_hbp || 0;
-          var sac = player.bat_sac || 0;
-          var bbi = player.bat_bbi || 0;
-          var roe = player.bat_roe || 0;
-          var lob = player.bat_lob || 0;
-          var risp = parseFloat(player.bat_avg_risp || 0).toFixed(3).replace(/^0+/, ''); // Remove leading zeros
-          var babip = parseFloat(player.bat_babip || 0).toFixed(3).replace(/^0+/, '');
+    for (var i = 0; i < regularPlayers.length; i++) {
+      var player = regularPlayers[i];
+      var firstName = player.firstName || '';
+      var lastName = player.lastName || '';
+      var bgames = player.bat_games || 0;
+      var pa = player.bat_pa || 0;
+      var ab = player.bat_ab || 0;
+      var runs = player.bat_runs || 0;
+      var hits = player.bat_hits || 0;
+      var b2 = player.bat_2b || 0;
+      var b3 = player.bat_3b || 0;
+      var hr = player.bat_hr || 0;
+      var rbi = player.bat_rbi || 0;
+      var sb = player.bat_sb || 0;
+      var cs = player.bat_cs || 0;
+      var bb = player.bat_bb || 0;
+      var so = player.bat_strikeouts || 0;
+      var kl = player.bat_ko_looking || 0;
+      var avg = parseFloat(player.bat_avg || 0).toFixed(3).replace(/^0+/, ''); 
+      var obp = parseFloat(player.bat_obp || 0).toFixed(3).replace(/^0+/, ''); 
+      var slg = parseFloat(player.bat_slg || 0).toFixed(3).replace(/^0+/, ''); 
+      var ops = parseFloat(player.bat_ops || 0).toFixed(3).replace(/^0+/, ''); 
+      var tb = player.bat_tb || 0;
+      var gidp = player.bat_gidp || 0;
+      var xbh = player.bat_xbh || 0;
+      var hbp = player.bat_hbp || 0;
+      var sac = player.bat_sac || 0;
+      var bbi = player.bat_bbi || 0;
+      var roe = player.bat_roe || 0;
+      var lob = player.bat_lob || 0;
+      var risp = parseFloat(player.bat_avg_risp || 0).toFixed(3).replace(/^0+/, ''); 
+      var babip = parseFloat(player.bat_babip || 0).toFixed(3).replace(/^0+/, '');
 
-          // Construct table rows
-          html += '<tr>';
-          html += '<td>' + (lastName === '-' ? 'Totals' : lastName + ', ' + firstName) + '</td>';
-          html += '<td>' + bgames + '</td>';
-          html += '<td>' + pa + '</td>';
-          html += '<td>' + ab + '</td>';
-          html += '<td>' + runs + '</td>';
-          html += '<td>' + hits + '</td>';
-          html += '<td>' + b2 + '</td>';
-          html += '<td>' + b3 + '</td>';
-          html += '<td>' + hr + '</td>';
-          html += '<td>' + rbi + '</td>';
-          html += '<td>' + sb + '</td>';
-          html += '<td>' + cs + '</td>';
-          html += '<td>' + bb + '</td>';
-          html += '<td>' + so + '</td>';
-          html += '<td>' + kl + '</td>';
-          html += '<td>' + avg + '</td>';
-          html += '<td>' + obp + '</td>';
-          html += '<td>' + slg + '</td>';
-          html += '<td>' + ops + '</td>';
-          html += '<td>' + tb + '</td>';
-          html += '<td>' + gidp + '</td>';
-          html += '<td>' + xbh + '</td>';
-          html += '<td>' + hbp + '</td>';
-          html += '<td>' + sac + '</td>';
-          html += '<td>' + bbi + '</td>';
-          html += '<td>' + roe + '</td>';
-          html += '<td>' + lob + '</td>';
-          html += '<td>' + risp + '</td>';
-          html += '<td>' + babip + '</td>';
-          html += '</tr>';
-      }
+      html += '<tr>';
+      html += '<td>' + lastName + ', ' + firstName + '</td>';
+      html += '<td>' + bgames + '</td>';
+      html += '<td>' + pa + '</td>';
+      html += '<td>' + ab + '</td>';
+      html += '<td>' + runs + '</td>';
+      html += '<td>' + hits + '</td>';
+      html += '<td>' + b2 + '</td>';
+      html += '<td>' + b3 + '</td>';
+      html += '<td>' + hr + '</td>';
+      html += '<td>' + rbi + '</td>';
+      html += '<td>' + sb + '</td>';
+      html += '<td>' + cs + '</td>';
+      html += '<td>' + bb + '</td>';
+      html += '<td>' + so + '</td>';
+      html += '<td>' + kl + '</td>';
+      html += '<td>' + avg + '</td>';
+      html += '<td>' + obp + '</td>';
+      html += '<td>' + slg + '</td>';
+      html += '<td>' + ops + '</td>';
+      html += '<td>' + tb + '</td>';
+      html += '<td>' + gidp + '</td>';
+      html += '<td>' + xbh + '</td>';
+      html += '<td>' + hbp + '</td>';
+      html += '<td>' + sac + '</td>';
+      html += '<td>' + bbi + '</td>';
+      html += '<td>' + roe + '</td>';
+      html += '<td>' + lob + '</td>';
+      html += '<td>' + risp + '</td>';
+      html += '<td>' + babip + '</td>';
+      html += '</tr>';
+    }
 
-      html += '</table>';
-      $('#results').html(html);
+    html += '</tbody><tfoot><tr>';
+    var totalsRow = dashPlayers.find(player => player.lastName === '-');
+    if (totalsRow) {
+      html += '<td>Totals</td>';
+      html += '<td>' + (totalsRow.bat_games || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_pa || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_ab || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_runs || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_hits || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_2b || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_3b || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_hr || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_rbi || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_sb || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_cs || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_bb || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_strikeouts || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_ko_looking || 0) + '</td>';
+      html += '<td>' + parseFloat(totalsRow.bat_avg || 0).toFixed(3).replace(/^0+/, '') + '</td>';
+      html += '<td>' + parseFloat(totalsRow.bat_obp || 0).toFixed(3).replace(/^0+/, '') + '</td>';
+      html += '<td>' + parseFloat(totalsRow.bat_slg || 0).toFixed(3).replace(/^0+/, '') + '</td>';
+      html += '<td>' + parseFloat(totalsRow.bat_ops || 0).toFixed(3).replace(/^0+/, '') + '</td>';
+      html += '<td>' + (totalsRow.bat_tb || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_gidp || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_xbh || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_hbp || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_sac || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_bbi || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_roe || 0) + '</td>';
+      html += '<td>' + (totalsRow.bat_lob || 0) + '</td>';
+      html += '<td>' + parseFloat(totalsRow.bat_avg_risp || 0).toFixed(3).replace(/^0+/, '') + '</td>';
+      html += '<td>' + parseFloat(totalsRow.bat_babip || 0).toFixed(3).replace(/^0+/, '') + '</td>';
+    }
+    html += '</tr></tfoot></table>';
+    $('#results').html(html);
   }
+
+  var sortDirections = {};
+
+  window.sortTable = function(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.querySelector("#results table");
+    switching = true;
+
+    dir = sortDirections[n] === 'desc' ? 'asc' : 'desc'; // Toggle direction
+
+    sortDirections[n] = dir;
+
+    while (switching) {
+      switching = false;
+      rows = table.rows;
+      for (i = 1; i < (rows.length - 1); i++) {
+        shouldSwitch = false;
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+        var xContent = isNaN(parseFloat(x.innerHTML)) ? x.innerHTML.toLowerCase() : parseFloat(x.innerHTML);
+        var yContent = isNaN(parseFloat(y.innerHTML)) ? y.innerHTML.toLowerCase() : parseFloat(y.innerHTML);
+        if (dir == "asc") {
+          if (xContent > yContent) {
+            shouldSwitch = true;
+            break;
+          }
+        } else if (dir == "desc") {
+          if (xContent < yContent) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+      }
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        switchcount++; 
+      } else {
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+
+    // Move Totals row to the bottom
+    var totalsRow = Array.from(rows).find(row => row.cells[0].innerText === "Totals");
+    if (totalsRow) {
+      table.tBodies[0].appendChild(totalsRow);
+    }
+  };
 });
