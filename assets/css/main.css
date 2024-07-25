@@ -2692,6 +2692,14 @@
   			left: 0;
 			background-color: #f8f8f8;
 		}
+
+  			tbody td:first-child, thead th:first-child {
+   				position: sticky;
+    				left: 0;
+    				background: #f8f8f8;
+    				z-index: 2;
+ 			}
+
 			/*
 			table tbody tr:nth-child(2n + 1) {
 				background-color: #f8f8f8;
