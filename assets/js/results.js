@@ -43,57 +43,63 @@ $(document).ready(function() {
         fetchData();
     });
 
-    function showResults(data) {
-        var games = $(data).find('GAME');
+function showResults(data) {
+    var games = $(data).find('GAME');
 
-        var html = '<table>';
-        // Table header
-        html += '<tr><th>Date</th><th>Matchup<th>Score</th><th>Result</th></tr>';
+    // Collect game data into an array for sorting
+    var gameList = [];
 
-        // Counters for wins, losses, and ties
-        var wins = 0;
-        var losses = 0;
-        var ties = 0;
-
-        // Loop through each game
-        games.each(function() {
-            var game = $(this);
-            var nameWithDate = game.attr('name') || '';
-            var visitor = game.attr('visitor') || '';
-            var home = game.attr('home') || '';
-            var visitorScore = parseInt(game.attr('visitorScore')) || 0;
-            var homeScore = parseInt(game.attr('homeScore')) || 0;
-            var result = game.attr('result') || '';
-
-            // Extract date from the beginning of the name using regex
-            var nameParts = nameWithDate.match(/(\d{1,2}\/\d{1,2}\/\d{2})\s+(.+)/);
-            var date = nameParts ? nameParts[1] : '';
-            var name = nameParts ? nameParts[2] : nameWithDate;
-
-            // Update counters based on the result
-            if (result.toLowerCase() === 'win') {
-                wins++;
-            } else if (result.toLowerCase() === 'loss') {
-                losses++;
-            } else if (result.toLowerCase() === 'tie') {
-                ties++;
-            }
-
-            // Construct table rows
-            html += '<tr>';
-            html += '<td>' + date + '</td>';
-            html += '<td>' + name + '</td>';
-            html += '<td>' + (visitorScore + ' - ' + homeScore) + '</td>';
-            html += '<td>' + result + '</td>';
-            html += '</tr>';
+    games.each(function () {
+        var game = $(this);
+        gameList.push({
+            scheduled: parseInt(game.attr('scheduled')), // Unix timestamp
+            nameWithDate: game.attr('name') || '',
+            visitor: game.attr('visitor') || '',
+            home: game.attr('home') || '',
+            visitorScore: parseInt(game.attr('visitorScore')) || 0,
+            homeScore: parseInt(game.attr('homeScore')) || 0,
+            result: game.attr('result') || ''
         });
+    });
 
-        html += '</table>';
+    // Sort by scheduled timestamp (ascending)
+    gameList.sort(function (a, b) {
+        return a.scheduled - b.scheduled;
+    });
 
-        // Display the results in the desired format
-        var resultText = '<div id="resultsText">' + '&nbsp;' + 'Record: ' + wins + ' - ' + losses + ' - ' + ties + '</div>';
-        $('#results').html(html + resultText);
-    }
+    var html = '<table>';
+    html += '<tr><th>Date</th><th>Matchup</th><th>Score</th><th>Result</th></tr>';
+
+    var wins = 0, losses = 0, ties = 0;
+
+    gameList.forEach(function (game) {
+        var nameParts = game.nameWithDate.match(/(\d{1,2}\/\d{1,2}\/\d{2})\s+(.+)/);
+        var date = nameParts ? nameParts[1] : '';
+        var name = nameParts ? nameParts[2] : game.nameWithDate;
+
+        // Update counters based on the result
+        if (game.result.toLowerCase() === 'win') {
+            wins++;
+        } else if (game.result.toLowerCase() === 'loss') {
+            losses++;
+        } else if (game.result.toLowerCase() === 'tie') {
+            ties++;
+        }
+
+        html += '<tr>';
+        html += '<td>' + date + '</td>';
+        html += '<td>' + name + '</td>';
+        html += '<td>' + (game.visitorScore + ' - ' + game.homeScore) + '</td>';
+        html += '<td>' + game.result + '</td>';
+        html += '</tr>';
+    });
+
+    html += '</table>';
+
+    var resultText = '<div id="resultsText">' + '&nbsp;' + 'Record: ' + wins + ' - ' + losses + ' - ' + ties + '</div>';
+    $('#results').html(html + resultText);
+}
+
 
     // Add CSS for left-aligning the results and adding a margin
     var css = '<style>#resultsText { text-align: left; margin-top: 10px; }</style>';
