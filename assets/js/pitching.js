@@ -10,8 +10,8 @@ $(document).ready(function () {
           <option value="ALL">Cumulative Stats</option>
 	  <option value="B1A52520-0CF5-4384-8B82-0DFF4327885C" selected>2025 Spring/Summer Playoffs</option>
 	  <option value="35046DD7-73E7-47AE-809C-5A5365670EFA">2025 Spring/Summer</option>
-          <option value="9A1BA060-2FC1-4C7F-B9F6-CB70F122FFBF">2024 Spring/Summer</option>
-          <option value="294CA57A-307B-48FB-BD2C-9B8256C0EE13">2024 Spring/Summer Playoffs</option>
+	  <option value="294CA57A-307B-48FB-BD2C-9B8256C0EE13">2024 Spring/Summer Playoffs</option>
+          <option value="9A1BA060-2FC1-4C7F-B9F6-CB70F122FFBF">2024 Spring/Summer</option> 
       </select>
   `;
     $('#dropdownContainer').html(dropdownHtml);
