@@ -7,11 +7,7 @@ $(document).ready(function() {
   var dropdownHtml = `
       <select id="leagueSelect">
           <option value="ALL">Cumulative Stats</option>
-
-          <!-- GAMECHANGER JSON SEASONS -->
-          <option value="assets/json/2026summerbattingstats.json" selected>2026 Spring/Summer</option>
-
-          <!-- ISCORE SEASONS -->
+          <option value="GC2026" selected>2026 Spring/Summer</option>
           <option value="B1A52520-0CF5-4384-8B82-0DFF4327885C">2025 Spring/Summer Playoffs</option>
           <option value="35046DD7-73E7-47AE-809C-5A5365670EFA">2025 Spring/Summer</option>
           <option value="294CA57A-307B-48FB-BD2C-9B8256C0EE13">2024 Spring/Summer Playoffs</option>
@@ -30,16 +26,10 @@ $(document).ready(function() {
     fetchData();
   });
 
-  /*
-  ==========================================
-  MAIN FETCH ROUTER
-  ==========================================
-  */
-
   function fetchData() {
 
-    if (league.endsWith('.json')) {
-      fetchGameChangerData(league);
+    if (league === "GC2026") {
+      fetchGameChangerData();
     } else {
       fetchIScoreData();
     }
@@ -64,11 +54,9 @@ $(document).ready(function() {
         json: "1"
       },
       dataType: "jsonp",
-
       success: function(data) {
         showIScoreResults(data);
       },
-
       error: function() {
         alert("An error occurred in the iScore request");
       }
@@ -84,10 +72,13 @@ $(document).ready(function() {
       .filter(player => (player.bat_games || 0) > 0);
 
     var regularPlayers = players.filter(player => player.lastName !== '-');
+    var dashPlayers = players.filter(player => player.lastName === '-');
 
     regularPlayers.sort((a, b) =>
       (a.lastName || '').localeCompare(b.lastName || '')
     );
+
+    players = regularPlayers.concat(dashPlayers);
 
     var html = '<table>';
 
@@ -105,23 +96,12 @@ $(document).ready(function() {
           <th onclick="sortTable(8)">HR</th>
           <th onclick="sortTable(9)">RBI</th>
           <th onclick="sortTable(10)">SB</th>
-          <th onclick="sortTable(11)">CS</th>
-          <th onclick="sortTable(12)">BB</th>
-          <th onclick="sortTable(13)">SO</th>
-          <th onclick="sortTable(14)">SOL</th>
-          <th onclick="sortTable(15)">BA</th>
-          <th onclick="sortTable(16)">OBP</th>
-          <th onclick="sortTable(17)">SLG</th>
-          <th onclick="sortTable(18)">OPS</th>
-          <th onclick="sortTable(19)">TB</th>
-          <th onclick="sortTable(20)">GDP</th>
-          <th onclick="sortTable(21)">XBH</th>
-          <th onclick="sortTable(22)">HBP</th>
-          <th onclick="sortTable(23)">SAC</th>
-          <th onclick="sortTable(24)">ROE</th>
-          <th onclick="sortTable(25)">LOB</th>
-          <th onclick="sortTable(26)">BARISP</th>
-          <th onclick="sortTable(27)">BABIP</th>
+          <th onclick="sortTable(11)">BB</th>
+          <th onclick="sortTable(12)">SO</th>
+          <th onclick="sortTable(13)">BA</th>
+          <th onclick="sortTable(14)">OBP</th>
+          <th onclick="sortTable(15)">SLG</th>
+          <th onclick="sortTable(16)">OPS</th>
         </tr>
       </thead>
       <tbody>
@@ -144,23 +124,12 @@ $(document).ready(function() {
       html += `<td>${player.bat_hr || 0}</td>`;
       html += `<td>${player.bat_rbi || 0}</td>`;
       html += `<td>${player.bat_sb || 0}</td>`;
-      html += `<td>${player.bat_cs || 0}</td>`;
       html += `<td>${player.bat_bb || 0}</td>`;
       html += `<td>${player.bat_strikeouts || 0}</td>`;
-      html += `<td>${player.bat_ko_looking || 0}</td>`;
       html += `<td>${parseFloat(player.bat_avg || 0).toFixed(3).replace(/^0+/, '')}</td>`;
       html += `<td>${parseFloat(player.bat_obp || 0).toFixed(3).replace(/^0+/, '')}</td>`;
       html += `<td>${parseFloat(player.bat_slg || 0).toFixed(3).replace(/^0+/, '')}</td>`;
       html += `<td>${parseFloat(player.bat_ops || 0).toFixed(3).replace(/^0+/, '')}</td>`;
-      html += `<td>${player.bat_tb || 0}</td>`;
-      html += `<td>${player.bat_gidp || 0}</td>`;
-      html += `<td>${player.bat_xbh || 0}</td>`;
-      html += `<td>${player.bat_hbp || 0}</td>`;
-      html += `<td>${player.bat_sac || 0}</td>`;
-      html += `<td>${player.bat_roe || 0}</td>`;
-      html += `<td>${player.bat_lob || 0}</td>`;
-      html += `<td>${parseFloat(player.bat_avg_risp || 0).toFixed(3).replace(/^0+/, '')}</td>`;
-      html += `<td>${parseFloat(player.bat_babip || 0).toFixed(3).replace(/^0+/, '')}</td>`;
 
       html += '</tr>';
     }
@@ -176,9 +145,9 @@ $(document).ready(function() {
   ==========================================
   */
 
-  function fetchGameChangerData(jsonFile) {
+  function fetchGameChangerData() {
 
-    fetch(jsonFile)
+    fetch('assets/json/2026summerbattingstats.json')
       .then(response => response.json())
       .then(data => {
         showGameChangerResults(data);
@@ -217,23 +186,12 @@ $(document).ready(function() {
           <th onclick="sortTable(8)">HR</th>
           <th onclick="sortTable(9)">RBI</th>
           <th onclick="sortTable(10)">SB</th>
-          <th onclick="sortTable(11)">CS</th>
-          <th onclick="sortTable(12)">BB</th>
-          <th onclick="sortTable(13)">SO</th>
-          <th onclick="sortTable(14)">SOL</th>
-          <th onclick="sortTable(15)">BA</th>
-          <th onclick="sortTable(16)">OBP</th>
-          <th onclick="sortTable(17)">SLG</th>
-          <th onclick="sortTable(18)">OPS</th>
-          <th onclick="sortTable(19)">TB</th>
-          <th onclick="sortTable(20)">GDP</th>
-          <th onclick="sortTable(21)">XBH</th>
-          <th onclick="sortTable(22)">HBP</th>
-          <th onclick="sortTable(23)">SAC</th>
-          <th onclick="sortTable(24)">ROE</th>
-          <th onclick="sortTable(25)">LOB</th>
-          <th onclick="sortTable(26)">BARISP</th>
-          <th onclick="sortTable(27)">BABIP</th>
+          <th onclick="sortTable(11)">BB</th>
+          <th onclick="sortTable(12)">SO</th>
+          <th onclick="sortTable(13)">BA</th>
+          <th onclick="sortTable(14)">OBP</th>
+          <th onclick="sortTable(15)">SLG</th>
+          <th onclick="sortTable(16)">OPS</th>
         </tr>
       </thead>
       <tbody>
@@ -256,23 +214,12 @@ $(document).ready(function() {
       html += `<td>${s.hr || 0}</td>`;
       html += `<td>${s.rbi || 0}</td>`;
       html += `<td>${s.sb || 0}</td>`;
-      html += `<td>${s.cs || 0}</td>`;
       html += `<td>${s.bb || 0}</td>`;
       html += `<td>${s.so || 0}</td>`;
-      html += `<td>${s.sol || 0}</td>`;
       html += `<td>${Number(s.ba || 0).toFixed(3).replace(/^0+/, '')}</td>`;
       html += `<td>${Number(s.obp || 0).toFixed(3).replace(/^0+/, '')}</td>`;
       html += `<td>${Number(s.slg || 0).toFixed(3).replace(/^0+/, '')}</td>`;
       html += `<td>${Number(s.ops || 0).toFixed(3).replace(/^0+/, '')}</td>`;
-      html += `<td>${s.tb || 0}</td>`;
-      html += `<td>${s.gdp || 0}</td>`;
-      html += `<td>${s.xbh || 0}</td>`;
-      html += `<td>${s.hbp || 0}</td>`;
-      html += `<td>${s.sac || 0}</td>`;
-      html += `<td>${s.roe || 0}</td>`;
-      html += `<td>${s.lob || 0}</td>`;
-      html += `<td>${Number(s.barisp || 0).toFixed(3).replace(/^0+/, '')}</td>`;
-      html += `<td>${Number(s.babip || 0).toFixed(3).replace(/^0+/, '')}</td>`;
 
       html += '</tr>';
     });
