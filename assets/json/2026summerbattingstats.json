@@ -173,8 +173,8 @@
             }
         },
         {
-            "first": NaN,
-            "last": NaN,
+            "first": "",
+            "last": "",
             "number": 5,
             "stats": {
                 "g": 1,
