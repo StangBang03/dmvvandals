@@ -81,7 +81,7 @@ async function loadSchedule() {
             `;
 
             tableBody.appendChild(row);
-            $('#schedule').html(html);
+           
         });
 
     } catch (error) {
