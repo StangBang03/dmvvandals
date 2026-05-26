@@ -9,6 +9,19 @@ $(document).ready(function () {
             <option value="assets/json/2025summerplayoffschedule.json">
                 2025 Spring/Summer Playoffs
             </option>
+
+            <option value="assets/json/2025summerschedule.json">
+                2025 Spring/Summer
+            </option>
+
+            <option value="assets/json/2024summerplayoffschedule.json">
+                2024 Spring/Summer Playoffs
+            </option>
+
+            <option value="assets/json/2024summerschedule.json">
+                2024 Spring/Summer
+            </option>
+
         </select>
     `;
 
