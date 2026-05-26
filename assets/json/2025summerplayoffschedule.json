@@ -8,7 +8,7 @@
           "name": "Arlington Mallards"
         },
         "is_full_day": false,
-        "start_ts": "2025-07-27T14:20:00.000Z",
+        "start_ts": "2025-07-27T14:19:40.000Z",
         "end_ts": "2025-07-27T16:48:38.000Z",
         "timezone": "America/New_York",
         "home_away": "away",
@@ -34,6 +34,101 @@
         "score": {
           "team": 4,
           "opponent_team": 2
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "790AFB96-C4F4-4682-B600-C2B29C75C6C6",
+        "opponent_team": {
+          "name": "Arlington Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-07-23T02:14:41.000Z",
+        "end_ts": "2025-07-23T05:15:11.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 8,
+          "opponent_team": 5
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "3786F133-F917-4B58-93DC-7E05F8CB23DC",
+        "opponent_team": {
+          "name": "Alexandria As & Senators"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-07-20T16:40:00.000Z",
+        "end_ts": "2025-07-20T20:10:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 9,
+          "opponent_team": 0
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "95D53C6D-39E9-48E9-8102-4D1B6029717B",
+        "opponent_team": {
+          "name": "Alexandria As & Senators"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-07-18T02:42:33.000Z",
+        "end_ts": "2025-07-18T05:47:46.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "score": {
+          "team": 10,
+          "opponent_team": 0
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "E0DF3B08-E553-4361-8E78-CC7363D59FA5",
+        "opponent_team": {
+          "name": "Washington Bison"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-07-12T20:57:18.000Z",
+        "end_ts": "2025-07-13T00:08:09.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 10,
+          "opponent_team": 6
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "1E6777F3-123F-4D56-8F6B-7EBFC2F34899",
+        "opponent_team": {
+          "name": "Washington Bison"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-07-11T02:05:38.000Z",
+        "end_ts": "2025-07-11T04:55:10.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "score": {
+          "team": 11,
+          "opponent_team": 4
         },
         "game_status": "completed",
         "organization_name": "DMV Vandals",
