@@ -6,6 +6,10 @@ async function loadSchedule() {
         // Change this path to wherever your JSON lives
         const response = await fetch('/assets/json/2026summerschedule.json');
 
+        let wins = 0;
+        let losses = 0;
+        let ties = 0;
+
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status}`);
         }
@@ -66,6 +70,14 @@ async function loadSchedule() {
 
                 result = `${winLoss} ${teamScore}-${opponentScore}`;
 
+                if (teamScore > opponentScore) {
+                    wins++;
+                } else if (teamScore < opponentScore) {
+                    losses++;
+                } else {
+                    ties++;
+            }
+
             } else {
 
                 result = 'Upcoming';
@@ -81,7 +93,23 @@ async function loadSchedule() {
             `;
 
             tableBody.appendChild(row);
-           
+           const existingRecord = document.getElementById('team-record');
+
+            if (existingRecord) {
+                existingRecord.remove();
+            }
+
+            const recordDiv = document.createElement('div');
+
+            recordDiv.id = 'team-record';
+
+            recordDiv.style.marginTop = '20px';
+            recordDiv.style.fontSize = '24px';
+            recordDiv.style.fontWeight = '300';
+
+            recordDiv.innerText = `Record: ${wins} - ${losses} - ${ties}`;
+
+            tableBody.parentElement.appendChild(recordDiv);
         });
 
     } catch (error) {
