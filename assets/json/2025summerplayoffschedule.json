@@ -1,0 +1,50 @@
+{
+  "type": "schedule",
+  "data": {
+    "events": [
+      {
+        "event_id": "55B69290-0167-4A97-B03A-53C5E7610987",
+        "opponent_team": {
+          "name": "Arlington Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-07-27T14:20:00.000Z",
+        "end_ts": "2025-07-27T16:48:38.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 5,
+          "opponent_team": 0
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "EBAB010D-B100-4469-B0C1-448E7DE8FA81",
+        "opponent_team": {
+          "name": "Arlington Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-07-26T14:00:00.000Z",
+        "end_ts": "2025-07-26T18:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "score": {
+          "team": 4,
+          "opponent_team": 2
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      }
+    ],
+    "team": {
+      "public_id": "iscore",
+      "name": "DMV Vandals",
+      "sport": "baseball"
+    }
+  }
+}

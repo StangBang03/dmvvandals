@@ -1,7 +1,15 @@
 $(document).ready(function () {
 
+    var dropdownHtml = `
+        <select id ="seasonSelect">
+            <option value="assets/json/2026summerschedule.json" selected>2026 Spring/Summer</option>
+            <option value="assets/json/2025summerplayoffschedule.json" >2025 Spring/Summer Playoffs</option>
+    `;
+    
+    $('#dropdownContainer').html(dropdownHtml);
+
     // JSON file location
-    const scheduleFile = 'assets/json/2026summerschedule.json';
+   var scheduleFile = $('#seasonSelect').val();
 
     // Load schedule data
     function fetchData() {
