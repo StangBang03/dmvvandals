@@ -1,20 +1,28 @@
 $(document).ready(function () {
 
     var dropdownHtml = `
-        <select id ="seasonSelect">
-            <option value="assets/json/2026summerschedule.json" selected>2026 Spring/Summer</option>
-            <option value="assets/json/2025summerplayoffschedule.json" >2025 Spring/Summer Playoffs</option>
-    `;
-    
-    $('#dropdownContainer').html(dropdownHtml);
+        <select id="seasonSelect">
+            <option value="assets/json/2026summerschedule.json" selected>
+                2026 Spring/Summer
+            </option>
 
-    // JSON file location
-   var scheduleFile = $('#seasonSelect').val();
+            <option value="assets/json/2025summerplayoffschedule.json">
+                2025 Spring/Summer Playoffs
+            </option>
+        </select>
+    `;
+
+    $('#dropdownContainer').html(dropdownHtml);
 
     // Load schedule data
     function fetchData() {
+
+        // Get selected file EACH TIME
+        var scheduleFile = $('#seasonSelect').val();
+
         $.getJSON(scheduleFile, function (data) {
             showResults(data);
+
         }).fail(function () {
             alert('An error occurred loading the schedule JSON file.');
         });
@@ -22,6 +30,11 @@ $(document).ready(function () {
 
     // Initial load
     fetchData();
+
+    // Reload when dropdown changes
+    $('#seasonSelect').change(function () {
+        fetchData();
+    });
 
     function showResults(data) {
 
@@ -42,7 +55,6 @@ $(document).ready(function () {
 
         gameList.forEach(function (game) {
 
-            // Format date
             const gameDate = new Date(game.start_ts);
 
             const formattedDate =
@@ -50,7 +62,6 @@ $(document).ready(function () {
                 gameDate.getDate().toString().padStart(2, '0') + '/' +
                 gameDate.getFullYear().toString().slice(-2);
 
-            // Opponent/team names
             const opponent = game.opponent_team?.name || 'TBD';
 
             const matchup =
@@ -58,7 +69,6 @@ $(document).ready(function () {
                     ? 'vs. ' + opponent
                     : '@ ' + opponent;
 
-            // Scores
             let scoreText = '-';
             let resultText = 'Upcoming';
 
@@ -94,7 +104,6 @@ $(document).ready(function () {
 
         html += '</table>';
 
-        // Record display
         const recordHtml =
             '<div id="resultsText">' +
             '&nbsp;Record: ' +
@@ -103,16 +112,5 @@ $(document).ready(function () {
 
         $('#results').html(html + recordHtml);
     }
-
-    // Keep same styling behavior
-    const css =
-        '<style>' +
-        '#resultsText {' +
-        'text-align: left;' +
-        'margin-top: 10px;' +
-        '}' +
-        '</style>';
-
-    $('head').append(css);
 
 });
