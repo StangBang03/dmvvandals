@@ -113,4 +113,8 @@ $(document).ready(function () {
         $('#results').html(html + recordHtml);
     }
 
+    // Add CSS for left-aligning the results and adding a margin
+    var css = '<style>#resultsText { text-align: left; margin-top: 10px; }</style>';
+    $('head').append(css);
+    
 });
