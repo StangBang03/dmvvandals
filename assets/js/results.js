@@ -6,12 +6,20 @@ $(document).ready(function () {
                 2026 Spring/Summer
             </option>
 
+            <option value="assets/json/2025fallschedule.json">
+                2025 Fall
+            </option>
+
             <option value="assets/json/2025summerplayoffschedule.json">
                 2025 Spring/Summer Playoffs
             </option>
 
             <option value="assets/json/2025summerschedule.json">
                 2025 Spring/Summer
+            </option>
+
+            <option value="assets/json/2024fallschedule.json">
+                2024 Fall
             </option>
 
             <option value="assets/json/2024summerplayoffschedule.json">

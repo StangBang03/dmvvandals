@@ -1,0 +1,349 @@
+{
+  "type": "schedule",
+  "data": {
+    "events": [
+      {
+        "event_id": "d8f7045e-5a3b-456a-a226-f4fa5b35f28e",
+        "opponent_team": {
+          "name": "Navigators"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-08-23T21:00:00.000Z",
+        "end_ts": "2025-08-24T00:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 5,
+          "opponent_team": 1
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "c205168e-6dcd-4502-9a6f-77c59ef899f8",
+        "opponent_team": {
+          "name": "Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-08-30T00:00:00.000Z",
+        "end_ts": "2025-08-30T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 5,
+          "opponent_team": 4
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "7705d781-582b-436a-9e7b-5275f82d438b",
+        "opponent_team": {
+          "name": "A\u2019s"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-09-04T00:00:00.000Z",
+        "end_ts": "2025-09-04T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 11,
+          "opponent_team": 9
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "97708df7-211f-44db-b057-6d5c1a4eca01",
+        "opponent_team": {
+          "name": "Silver Bullets"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-09-07T00:00:00.000Z",
+        "end_ts": "2025-09-07T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 7,
+          "opponent_team": 3
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "0fe05ff7-c27d-4b0a-9f3a-b20927ae1427",
+        "opponent_team": {
+          "name": "BisJax"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-09-11T00:00:00.000Z",
+        "end_ts": "2025-09-11T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 9,
+          "opponent_team": 5
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "061b80bd-05c4-4fc8-b2d3-e30ba187836e",
+        "opponent_team": {
+          "name": "Bulls"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-09-14T18:00:00.000Z",
+        "end_ts": "2025-09-14T21:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 20,
+          "opponent_team": 2
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "b95f01a8-1c92-46d0-a182-90a43b235e9d",
+        "opponent_team": {
+          "name": "Navigators"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-09-20T00:00:00.000Z",
+        "end_ts": "2025-09-20T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 16,
+          "opponent_team": 2
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "d3ab917d-f66b-4e88-856f-b04ec0742a10",
+        "opponent_team": {
+          "name": "Sacred Family"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-09-21T00:00:00.000Z",
+        "end_ts": "2025-09-21T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 15,
+          "opponent_team": 4
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "eb1b785d-31e2-4642-8a04-2f08106bd021",
+        "opponent_team": {
+          "name": "Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-09-25T00:00:00.000Z",
+        "end_ts": "2025-09-25T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 5,
+          "opponent_team": 1
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "675a2f6a-144f-46b7-9dca-846744d33c54",
+        "opponent_team": {
+          "name": "A\u2019s"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-02T00:00:00.000Z",
+        "end_ts": "2025-10-02T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 7,
+          "opponent_team": 0
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "74c81e42-a0d9-4cbd-86bc-90876e0c9e51",
+        "opponent_team": {
+          "name": "Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-05T00:00:00.000Z",
+        "end_ts": "2025-10-05T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 4,
+          "opponent_team": 8
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "0dd89beb-24c1-4c1c-bb92-5125a47aa0a8",
+        "opponent_team": {
+          "name": "Silver Bullets"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-07T00:00:00.000Z",
+        "end_ts": "2025-10-07T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 9,
+          "opponent_team": 4
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "303c57d6-f39c-4a9c-8410-b38f7f0c098c",
+        "opponent_team": {
+          "name": "BisJax"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-09T00:00:00.000Z",
+        "end_ts": "2025-10-09T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 19,
+          "opponent_team": 5
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "19f72c28-b9da-446b-8061-9a583637e587",
+        "opponent_team": {
+          "name": "BisJax"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-12T00:00:00.000Z",
+        "end_ts": "2025-10-12T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 14,
+          "opponent_team": 2
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "1e5d46fc-912f-4b92-ba27-d5356e45faa7",
+        "opponent_team": {
+          "name": "Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-16T00:00:00.000Z",
+        "end_ts": "2025-10-16T02:50:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "f244d736-55f8-4b97-b4e7-883f43eca1c3",
+        "opponent_team": {
+          "name": "Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-16T00:00:00.000Z",
+        "end_ts": "2025-10-16T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 7,
+          "opponent_team": 6
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "d4e30eff-87c1-4b6a-bc4c-9ca5ca8813ae",
+        "opponent_team": {
+          "name": "Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-18T18:00:00.000Z",
+        "end_ts": "2025-10-18T21:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 2,
+          "opponent_team": 6
+        },
+        "game_status": "completed"
+      },
+      {
+        "event_id": "99e457fd-ec49-47cb-b836-26bcaf0c0e27",
+        "opponent_team": {
+          "name": "Mallards"
+        },
+        "is_full_day": false,
+        "start_ts": "2025-10-19T21:30:00.000Z",
+        "end_ts": "2025-10-20T00:30:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false,
+        "score": {
+          "team": 0,
+          "opponent_team": 4
+        },
+        "game_status": "completed"
+      }
+    ],
+    "team": {
+      "public_id": "iscore",
+      "name": "DMV Vandals",
+      "sport": "baseball"
+    }
+  }
+}

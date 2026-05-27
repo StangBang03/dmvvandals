@@ -1,0 +1,217 @@
+{
+  "type": "schedule",
+  "data": {
+    "events": [
+      {
+        "event_id": "903a65dc-6f03-41b6-8b5d-8a9db4619503",
+        "opponent_team": {
+          "name": "Manassas Biscuits"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-08-26T23:00:00.000Z",
+        "end_ts": "2024-08-27T02:00:00.000Z",
+        "timezone": "Europe/Paris",
+        "home_away": "home",
+        "score": {
+          "team": 16,
+          "opponent_team": 7
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "9aec98cf-618e-4f5d-94f0-cbb04a93d765",
+        "opponent_team": {
+          "name": "Navigators"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-09-05T00:00:00.000Z",
+        "end_ts": "2024-09-05T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 12,
+          "opponent_team": 3
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "9b45a09a-193a-4b8c-8a40-ec2fe94d7dec",
+        "opponent_team": {
+          "name": "Navigators"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-09-10T00:00:00.000Z",
+        "end_ts": "2024-09-10T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 15,
+          "opponent_team": 11
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "b73b416a-1e8c-4cbc-8048-efd9cbb27799",
+        "opponent_team": {
+          "name": "Los Duccs"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-09-14T12:30:00.000Z",
+        "end_ts": "2024-09-14T15:30:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 0,
+          "opponent_team": 2
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "515a9976-96ec-4914-aa25-c5dc97b40ba6",
+        "opponent_team": {
+          "name": "Los Arlington Duccs"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-09-17T00:00:00.000Z",
+        "end_ts": "2024-09-17T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "score": {
+          "team": 9,
+          "opponent_team": 8
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "a972f7c6-6125-44cc-b3d4-35c1b233b774",
+        "opponent_team": {
+          "name": "Silver Bullets"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-09-24T00:00:00.000Z",
+        "end_ts": "2024-09-24T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "game_status": "scheduled",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "f64fb8ce-fab2-46b5-a5f6-d3bff36dc01b",
+        "opponent_team": {
+          "name": "Navigators"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-10-06T21:00:00.000Z",
+        "end_ts": "2024-10-07T00:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "score": {
+          "team": 10,
+          "opponent_team": 1
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "d8c9de61-ae4c-4f8d-8964-25b56eed9faf",
+        "opponent_team": {
+          "name": "Navigators"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-10-17T00:00:00.000Z",
+        "end_ts": "2024-10-17T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "score": {
+          "team": 21,
+          "opponent_team": 2
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "62d70ad4-d431-4633-be51-43a161fab095",
+        "opponent_team": {
+          "name": "Navigators"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-10-18T23:50:00.000Z",
+        "end_ts": "2024-10-19T02:50:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 9,
+          "opponent_team": 7
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "caba7510-e6dd-4b70-818d-0053486e1af9",
+        "opponent_team": {
+          "name": "Los Arlington Duccs"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-10-24T00:00:00.000Z",
+        "end_ts": "2024-10-24T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "away",
+        "score": {
+          "team": 11,
+          "opponent_team": 1
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      },
+      {
+        "event_id": "5825fdb8-c4cb-44ff-8cc2-91b493809490",
+        "opponent_team": {
+          "name": "Los Arlington Duccs"
+        },
+        "is_full_day": false,
+        "start_ts": "2024-10-26T00:00:00.000Z",
+        "end_ts": "2024-10-26T03:00:00.000Z",
+        "timezone": "America/New_York",
+        "home_away": "home",
+        "score": {
+          "team": 3,
+          "opponent_team": 1
+        },
+        "game_status": "completed",
+        "organization_name": "DMV Vandals",
+        "organization_public_id": "iscore",
+        "has_live_stream": false
+      }
+    ],
+    "team": {
+      "public_id": "iscore",
+      "name": "DMV Vandals",
+      "sport": "baseball"
+    }
+  }
+}
