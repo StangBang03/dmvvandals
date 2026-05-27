@@ -3,12 +3,13 @@ $(document).ready(function () {
     function fetchStandings() {
 
         const standingsUrl =
-    		"https://corsproxy.io/?https://se-api.sportsengine.com/v3/microsites/season_team_stats?program_id=69573a60e40fdb358ad519b1";
+            "https://corsproxy.io/?https://se-api.sportsengine.com/v3/microsites/season_team_stats?program_id=69573a60e40fdb358ad519b1";
 
         $.getJSON(standingsUrl, function (data) {
             showStandings(data);
+        });
 
-        })
+    }
 
     // Initial load
     fetchStandings();
@@ -52,6 +53,7 @@ $(document).ready(function () {
 
         // Build table
         let html = '<table>';
+
         html += `
             <tr>
                 <th>#</th>
@@ -83,6 +85,7 @@ $(document).ready(function () {
         html += '</table>';
 
         $('#standings').html(html);
+
     }
 
 });
