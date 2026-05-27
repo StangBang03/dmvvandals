@@ -8,10 +8,7 @@ $(document).ready(function () {
         $.getJSON(standingsUrl, function (data) {
             showStandings(data);
 
-        }).fail(function () {
-            alert('An error occurred loading standings data.');
-        });
-    }
+        })
 
     // Initial load
     fetchStandings();
