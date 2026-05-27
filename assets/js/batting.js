@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   var dropdownHtml = `
       <select id="leagueSelect">
-          <option value="ALL">Cumulative Stats</option>
+          <!-- <option value="ALL">Cumulative Stats</option> -->
 
           <!-- GAMECHANGER JSON SEASONS -->
           <option value="assets/json/2026summerbattingstats.json" selected>2026 Spring/Summer</option>
