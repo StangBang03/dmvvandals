@@ -81,7 +81,7 @@
       {
         "event_id": "671212e2-cec3-48dd-b33b-0235e3ee23a0",
         "opponent_team": {
-          "name": "A’s"
+          "name": "A\u2019s"
         },
         "is_full_day": false,
         "start_ts": "2026-04-18T18:00:00.000Z",
@@ -247,7 +247,7 @@
       {
         "event_id": "5ca38fcf-0951-401c-9faa-5d926ea5ea7a",
         "opponent_team": {
-          "name": "A’s"
+          "name": "A\u2019s"
         },
         "is_full_day": false,
         "start_ts": "2026-05-31T16:00:00.000Z",
@@ -256,7 +256,12 @@
         "home_away": "home",
         "organization_name": "DC Wood (Summer 2026)",
         "organization_public_id": "Q8cjKS1gVU5j",
-        "has_live_stream": false
+        "has_live_stream": false,
+        "score": {
+          "team": 0,
+          "opponent_team": 9
+        },
+        "game_status": "completed"
       },
       {
         "event_id": "b7141af7-d562-49e3-9b49-1045e2b0b7c5",
@@ -345,7 +350,7 @@
       {
         "event_id": "adef947e-9fe2-439b-99af-96bc8fa2a66d",
         "opponent_team": {
-          "name": "A’s"
+          "name": "A\u2019s"
         },
         "is_full_day": false,
         "start_ts": "2026-06-20T18:00:00.000Z",
