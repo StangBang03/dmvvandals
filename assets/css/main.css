@@ -2686,18 +2686,19 @@
 		table tbody tr:hover {
           		background-color: #ffff99;
 		}
-			
+		/*	
 		table tbody tr>th:first-child,tr>td:first-child {
   			position: sticky;
   			left: 0;
 			background-color: #f8f8f8;
 		}
-
+*/
   			tbody td:first-child, thead th:first-child {
    				position: sticky;
     				left: 0;
     				background: #f8f8f8;
     				z-index: 999;
+					clip-path: inset(0);
  			}
 
 			/*
