@@ -2697,7 +2697,7 @@
    				position: sticky;
     				left: 0;
     				background: #f8f8f8;
-    				z-index: 100;
+    				z-index: 999;
  			}
 
 			/*
