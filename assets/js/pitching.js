@@ -7,10 +7,11 @@ $(document).ready(function () {
     // Create dropdown menu
     var dropdownHtml = `
       <select id="leagueSelect">
-          <option value="ALL">Cumulative Stats</option>
-	  <option value="B1A52520-0CF5-4384-8B82-0DFF4327885C" selected>2025 Spring/Summer Playoffs</option>
-	  <option value="35046DD7-73E7-47AE-809C-5A5365670EFA">2025 Spring/Summer</option>
-	  <option value="294CA57A-307B-48FB-BD2C-9B8256C0EE13">2024 Spring/Summer Playoffs</option>
+          <!-- <option value="ALL">Cumulative Stats</option> -->
+        <option value="assets/json/2026summerpitchingstats.json" selected>2026 Spring/Summer</option>
+	    <option value="B1A52520-0CF5-4384-8B82-0DFF4327885C">2025 Spring/Summer Playoffs</option>
+	    <option value="35046DD7-73E7-47AE-809C-5A5365670EFA">2025 Spring/Summer</option>
+	    <option value="294CA57A-307B-48FB-BD2C-9B8256C0EE13">2024 Spring/Summer Playoffs</option>
           <option value="9A1BA060-2FC1-4C7F-B9F6-CB70F122FFBF">2024 Spring/Summer</option> 
       </select>
   `;
@@ -20,20 +21,34 @@ $(document).ready(function () {
     var league = $('#leagueSelect').val();
 
     // Function to fetch and display data
-    function fetchData() {
-        $.ajax({
-            type: "GET",
-            url: "https://api.iscoresports.com/teamwebsite/cumulativestats.php",
-            data: { s: sport, t: team, p: password, lg: league, json: "1" },
-            dataType: "jsonp",
-            success: function (data) {
-                showResults(data);
-            },
-            error: function () {
-                alert("An error occurred in the request");
-            }
+function fetchData() {
+
+    // 2026 JSON file
+    if (league === "assets/json/2026summerpitchingstats.json") {
+
+        $.getJSON(league, function (data) {
+            showResults2026(data);
+        }).fail(function () {
+            alert("Unable to load 2026 pitching stats");
         });
+
+        return;
     }
+
+    // Legacy iScore seasons
+    $.ajax({
+        type: "GET",
+        url: "https://api.iscoresports.com/teamwebsite/cumulativestats.php",
+        data: { s: sport, t: team, p: password, lg: league, json: "1" },
+        dataType: "jsonp",
+        success: function (data) {
+            showResults(data);
+        },
+        error: function () {
+            alert("An error occurred in the request");
+        }
+    });
+}
 
     // Fetch data initially
     fetchData();
@@ -179,6 +194,78 @@ $(document).ready(function () {
         html += '</tr></tfoot></table>';
         $('#results').html(html);
     }
+
+function showResults2026(data) {
+
+    var players = data.players;
+
+    players.sort((a, b) =>
+        (a.last || '').localeCompare(b.last || '')
+    );
+
+    var html = '<table>';
+
+    html += '<thead><tr>';
+    html += '<th onclick="sortTable(0)">Name</th>';
+    html += '<th onclick="sortTable(1)">W</th>';
+    html += '<th onclick="sortTable(2)">L</th>';
+    html += '<th onclick="sortTable(3)">ERA</th>';
+    html += '<th onclick="sortTable(4)">G</th>';
+    html += '<th onclick="sortTable(5)">GS</th>';
+    html += '<th onclick="sortTable(6)">SV</th>';
+    html += '<th onclick="sortTable(7)">IP</th>';
+    html += '<th onclick="sortTable(8)">H</th>';
+    html += '<th onclick="sortTable(9)">R</th>';
+    html += '<th onclick="sortTable(10)">ER</th>';
+    html += '<th onclick="sortTable(11)">HR</th>';
+    html += '<th onclick="sortTable(12)">BB</th>';
+    html += '<th onclick="sortTable(13)">SO</th>';
+    html += '<th onclick="sortTable(14)">SOL</th>';
+    html += '<th onclick="sortTable(15)">HBP</th>';
+    html += '<th onclick="sortTable(16)">BK</th>';
+    html += '<th onclick="sortTable(17)">BF</th>';
+    html += '<th onclick="sortTable(18)">FIP</th>';
+    html += '<th onclick="sortTable(19)">WHIP</th>';
+    html += '<th onclick="sortTable(20)">K/BB</th>';
+    html += '<th onclick="sortTable(21)">BAA</th>';
+    html += '<th onclick="sortTable(22)">BABIP</th>';
+    html += '</tr></thead><tbody>';
+
+    players.forEach(function (player) {
+
+        var s = player.stats;
+
+        html += '<tr>';
+        html += '<td>' + player.last + ', ' + player.first + '</td>';
+        html += '<td>' + (s.w ?? 0) + '</td>';
+        html += '<td>' + (s.l ?? 0) + '</td>';
+        html += '<td>' + Number(s.era ?? 0).toFixed(2) + '</td>';
+        html += '<td>' + (s.g ?? 0) + '</td>';
+        html += '<td>' + (s.gs ?? 0) + '</td>';
+        html += '<td>' + (s.sv ?? 0) + '</td>';
+        html += '<td>' + (s.ip ?? 0) + '</td>';
+        html += '<td>' + (s.h ?? 0) + '</td>';
+        html += '<td>' + (s.r ?? 0) + '</td>';
+        html += '<td>' + (s.er ?? 0) + '</td>';
+        html += '<td>' + (s.hr ?? 0) + '</td>';
+        html += '<td>' + (s.bb ?? 0) + '</td>';
+        html += '<td>' + (s.so ?? 0) + '</td>';
+        html += '<td>' + (s.sol ?? 0) + '</td>';
+        html += '<td>' + (s.hbp ?? 0) + '</td>';
+        html += '<td>' + (s.bk ?? 0) + '</td>';
+        html += '<td>' + (s.bf ?? 0) + '</td>';
+        html += '<td>' + Number(s.fip ?? 0).toFixed(2) + '</td>';
+        html += '<td>' + Number(s.whip ?? 0).toFixed(2) + '</td>';
+        html += '<td>' + Number(s.kbb ?? 0).toFixed(2) + '</td>';
+        html += '<td>' + Number(s.baa ?? 0).toFixed(3).replace(/^0+/, '') + '</td>';
+        html += '<td>' + Number(s.babip ?? 0).toFixed(3).replace(/^0+/, '') + '</td>';
+        html += '</tr>';
+    });
+
+    html += '</tbody></table>';
+
+    $('#results').html(html);
+}
 
     var sortDirections = {};
 
