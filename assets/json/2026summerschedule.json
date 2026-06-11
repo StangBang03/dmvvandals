@@ -294,7 +294,12 @@
         "home_away": "away",
         "organization_name": "DC Wood (Summer 2026)",
         "organization_public_id": "Q8cjKS1gVU5j",
-        "has_live_stream": false
+        "has_live_stream": false,
+        "score": {
+          "team": 2,
+          "opponent_team": 4
+        },
+        "game_status": "completed"
       },
       {
         "event_id": "e7b4bab6-cd1e-446d-8971-07e9ef0484b0",
@@ -308,7 +313,12 @@
         "home_away": "home",
         "organization_name": "DC Wood (Summer 2026)",
         "organization_public_id": "Q8cjKS1gVU5j",
-        "has_live_stream": false
+        "has_live_stream": false,
+        "score": {
+          "team": 15,
+          "opponent_team": 3
+        },
+        "game_status": "completed"
       },
       {
         "event_id": "9d6d9525-b5aa-4f3d-b8c0-50f38926f127",
@@ -322,7 +332,12 @@
         "home_away": "home",
         "organization_name": "DC Wood (Summer 2026)",
         "organization_public_id": "Q8cjKS1gVU5j",
-        "has_live_stream": false
+        "has_live_stream": false,
+        "score": {
+          "team": 9,
+          "opponent_team": 9
+        },
+        "game_status": "completed"
       },
       {
         "event_id": "53aec290-0fd7-4ca7-87c9-2901db9343d0",
