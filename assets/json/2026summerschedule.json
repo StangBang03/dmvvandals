@@ -365,7 +365,12 @@
         "home_away": "away",
         "organization_name": "DC Wood (Summer 2026)",
         "organization_public_id": "Q8cjKS1gVU5j",
-        "has_live_stream": false
+        "has_live_stream": false,
+        "score": {
+          "team": 16,
+          "opponent_team": 6
+        },
+        "game_status": "completed"
       },
       {
         "event_id": "adef947e-9fe2-439b-99af-96bc8fa2a66d",
