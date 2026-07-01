@@ -1,85 +1,10 @@
 {
     "league": "DCWOOD",
     "season": "2026 Summer",
-    "updated": "2026-07-01T11:32:52",
+    "updated": "2026-07-01T11:53:42",
     "divisions": [
         {
-            "name": "Division 1",
-            "teams": [
-                {
-                    "teamId": "695745982ee9094475473a17",
-                    "name": "Arlington Mallards",
-                    "wins": 20,
-                    "losses": 1,
-                    "ties": 2,
-                    "games": 23,
-                    "pct": 0.913,
-                    "gb": 0,
-                    "rf": 190,
-                    "ra": 91,
-                    "rd": 99,
-                    "divisionRecord": "13 - 1 - 2"
-                },
-                {
-                    "teamId": "698fdc820f3a7dcc01e6fccf",
-                    "name": "Potomac Clementes",
-                    "wins": 16,
-                    "losses": 5,
-                    "ties": 1,
-                    "games": 22,
-                    "pct": 0.75,
-                    "gb": 4,
-                    "rf": 211,
-                    "ra": 120,
-                    "rd": 91,
-                    "divisionRecord": "7 - 4 - 1"
-                },
-                {
-                    "teamId": "69587571a98c53865373a96b",
-                    "name": "DMV Vandals",
-                    "wins": 13,
-                    "losses": 7,
-                    "ties": 3,
-                    "games": 23,
-                    "pct": 0.63,
-                    "gb": 6.5,
-                    "rf": 207,
-                    "ra": 139,
-                    "rd": 68,
-                    "divisionRecord": "6 - 6 - 3"
-                },
-                {
-                    "teamId": "69573a8be40fdb358ad519bd",
-                    "name": "Arlington Silver Bullets",
-                    "wins": 14,
-                    "losses": 9,
-                    "ties": 1,
-                    "games": 24,
-                    "pct": 0.604,
-                    "gb": 7,
-                    "rf": 207,
-                    "ra": 136,
-                    "rd": 71,
-                    "divisionRecord": "6 - 9 - 0"
-                },
-                {
-                    "teamId": "698fdc820f3a7da83ee6fe3c",
-                    "name": "Senators",
-                    "wins": 3,
-                    "losses": 21,
-                    "ties": 0,
-                    "games": 24,
-                    "pct": 0.125,
-                    "gb": 18.5,
-                    "rf": 117,
-                    "ra": 281,
-                    "rd": -164,
-                    "divisionRecord": "0 - 12 - 0"
-                }
-            ]
-        },
-        {
-            "name": "Division 2",
+            "name": "Capital Division",
             "teams": [
                 {
                     "teamId": "69574598672c8b5a3f687dfe",
@@ -150,6 +75,81 @@
                     "ra": 212,
                     "rd": -122,
                     "divisionRecord": "1 - 13 - 1"
+                }
+            ]
+        },
+        {
+            "name": "District Division",
+            "teams": [
+                {
+                    "teamId": "695745982ee9094475473a17",
+                    "name": "Arlington Mallards",
+                    "wins": 20,
+                    "losses": 1,
+                    "ties": 2,
+                    "games": 23,
+                    "pct": 0.913,
+                    "gb": 0,
+                    "rf": 190,
+                    "ra": 91,
+                    "rd": 99,
+                    "divisionRecord": "13 - 1 - 2"
+                },
+                {
+                    "teamId": "698fdc820f3a7dcc01e6fccf",
+                    "name": "Potomac Clementes",
+                    "wins": 16,
+                    "losses": 5,
+                    "ties": 1,
+                    "games": 22,
+                    "pct": 0.75,
+                    "gb": 4,
+                    "rf": 211,
+                    "ra": 120,
+                    "rd": 91,
+                    "divisionRecord": "7 - 4 - 1"
+                },
+                {
+                    "teamId": "69587571a98c53865373a96b",
+                    "name": "DMV Vandals",
+                    "wins": 13,
+                    "losses": 7,
+                    "ties": 3,
+                    "games": 23,
+                    "pct": 0.63,
+                    "gb": 6.5,
+                    "rf": 207,
+                    "ra": 139,
+                    "rd": 68,
+                    "divisionRecord": "6 - 6 - 3"
+                },
+                {
+                    "teamId": "69573a8be40fdb358ad519bd",
+                    "name": "Arlington Silver Bullets",
+                    "wins": 14,
+                    "losses": 9,
+                    "ties": 1,
+                    "games": 24,
+                    "pct": 0.604,
+                    "gb": 7,
+                    "rf": 207,
+                    "ra": 136,
+                    "rd": 71,
+                    "divisionRecord": "6 - 9 - 0"
+                },
+                {
+                    "teamId": "698fdc820f3a7da83ee6fe3c",
+                    "name": "Senators",
+                    "wins": 3,
+                    "losses": 21,
+                    "ties": 0,
+                    "games": 24,
+                    "pct": 0.125,
+                    "gb": 18.5,
+                    "rf": 117,
+                    "ra": 281,
+                    "rd": -164,
+                    "divisionRecord": "0 - 12 - 0"
                 }
             ]
         }
