@@ -2,89 +2,74 @@ $(document).ready(function () {
 
     function fetchStandings() {
 
-        const standingsUrl =
-            "https://corsproxy.io/?https://se-api.sportsengine.com/v3/microsites/season_team_stats?program_id=69573a60e40fdb358ad519b1";
-
-        $.getJSON(standingsUrl, function (data) {
+        $.getJSON("assets/json/2026summerstandings.json", function (data) {
             showStandings(data);
+        }).fail(function () {
+            $("#standings").html("<p>Unable to load standings.</p>");
         });
 
     }
 
-    // Initial load
     fetchStandings();
 
     function showStandings(data) {
 
-        let standings = data.result || [];
+        let html = "";
 
-        // Build standings array
-        let teams = standings.map(function (team) {
+        data.divisions.forEach(function (division) {
 
-            const scoring = team.values?.baseball_team_scoring || {};
+            html += `<h3>${division.name}</h3>`;
 
-            const wins = parseInt(scoring.wins || 0);
-            const losses = parseInt(scoring.losses || 0);
-            const ties = parseInt(scoring.ties || 0);
-            const runs = parseInt(scoring.runs || 0);
+            html += `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Team</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>T</th>
+                            <th>PCT</th>
+                            <th>GB</th>
+                            <th>RF</th>
+                            <th>RA</th>
+                            <th>RD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
 
-            const gamesPlayed = wins + losses + ties;
+            division.teams.forEach(function (team, index) {
 
-            // Tie counts as half win
-            const pct = gamesPlayed > 0
-                ? ((wins + (ties * 0.5)) / gamesPlayed).toFixed(3)
-                : ".000";
+                const highlight = team.name === "DMV Vandals"
+                    ? ' class="vandals"'
+                    : "";
 
-            return {
-                team: team.team_name.trim(),
-                wins: wins,
-                losses: losses,
-                ties: ties,
-                pct: pct,
-                runs: runs
-            };
+                html += `
+                    <tr${highlight}>
+                        <td>${index + 1}</td>
+                        <td>${team.name}</td>
+                        <td>${team.wins}</td>
+                        <td>${team.losses}</td>
+                        <td>${team.ties}</td>
+                        <td>${team.pct.toFixed(3)}</td>
+                        <td>${team.gb}</td>
+                        <td>${team.rf}</td>
+                        <td>${team.ra}</td>
+                        <td>${team.rd}</td>
+                    </tr>
+                `;
 
-        });
+            });
 
-        // Sort by winning percentage descending
-        teams.sort(function (a, b) {
-            return parseFloat(b.pct) - parseFloat(a.pct);
-        });
-
-        // Build table
-        let html = '<table>';
-
-        html += `
-            <tr>
-                <th>#</th>
-                <th>Team</th>
-                <th>W</th>
-                <th>L</th>
-                <th>T</th>
-                <th>PCT</th>
-                <th>RS</th>
-            </tr>
-        `;
-
-        teams.forEach(function (team, index) {
-
-            html += '<tr>';
-
-            html += '<td>' + (index + 1) + '</td>';
-            html += '<td>' + team.team + '</td>';
-            html += '<td>' + team.wins + '</td>';
-            html += '<td>' + team.losses + '</td>';
-            html += '<td>' + team.ties + '</td>';
-            html += '<td>' + team.pct + '</td>';
-            html += '<td>' + team.runs + '</td>';
-
-            html += '</tr>';
+            html += `
+                    </tbody>
+                </table>
+            `;
 
         });
 
-        html += '</table>';
-
-        $('#standings').html(html);
+        $("#standings").html(html);
 
     }
 
