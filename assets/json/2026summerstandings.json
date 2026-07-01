@@ -1,85 +1,10 @@
 {
     "league": "DCWOOD",
     "season": "2026 Summer",
-    "updated": "2026-07-01T12:03:30",
+    "updated": "2026-07-01T12:39:12",
     "divisions": [
         {
             "name": "Capital Division",
-            "teams": [
-                {
-                    "teamId": "69574598672c8b5a3f687dfe",
-                    "name": "Alexandria Titans",
-                    "wins": 11,
-                    "losses": 9,
-                    "ties": 2,
-                    "games": 22,
-                    "pct": 0.545,
-                    "gb": 8.5,
-                    "rf": 132,
-                    "ra": 136,
-                    "rd": -4,
-                    "divisionRecord": "9 - 5 - 2"
-                },
-                {
-                    "teamId": "69574598e87fdaab96521193",
-                    "name": "Washington Bison",
-                    "wins": 11,
-                    "losses": 11,
-                    "ties": 1,
-                    "games": 23,
-                    "pct": 0.5,
-                    "gb": 9.5,
-                    "rf": 180,
-                    "ra": 175,
-                    "rd": 5,
-                    "divisionRecord": "8 - 3 - 0"
-                },
-                {
-                    "teamId": "6957460cf0d5450f770109b3",
-                    "name": "Northern Virginia Navigators",
-                    "wins": 9,
-                    "losses": 11,
-                    "ties": 2,
-                    "games": 22,
-                    "pct": 0.455,
-                    "gb": 10.5,
-                    "rf": 137,
-                    "ra": 167,
-                    "rd": -30,
-                    "divisionRecord": "8 - 4 - 2"
-                },
-                {
-                    "teamId": "69574598672c8b373f68a1a9",
-                    "name": "Alexandria A's",
-                    "wins": 8,
-                    "losses": 14,
-                    "ties": 1,
-                    "games": 23,
-                    "pct": 0.37,
-                    "gb": 12.5,
-                    "rf": 174,
-                    "ra": 188,
-                    "rd": -14,
-                    "divisionRecord": "4 - 5 - 1"
-                },
-                {
-                    "teamId": "698fdc820f3a7d9290e70210",
-                    "name": "Tren del Norte (TDN)",
-                    "wins": 2,
-                    "losses": 19,
-                    "ties": 1,
-                    "games": 22,
-                    "pct": 0.114,
-                    "gb": 18,
-                    "rf": 90,
-                    "ra": 212,
-                    "rd": -122,
-                    "divisionRecord": "1 - 13 - 1"
-                }
-            ]
-        },
-        {
-            "name": "District Division",
             "teams": [
                 {
                     "teamId": "695745982ee9094475473a17",
@@ -150,6 +75,81 @@
                     "ra": 281,
                     "rd": -164,
                     "divisionRecord": "0 - 12 - 0"
+                }
+            ]
+        },
+        {
+            "name": "District Division",
+            "teams": [
+                {
+                    "teamId": "69574598672c8b5a3f687dfe",
+                    "name": "Alexandria Titans",
+                    "wins": 11,
+                    "losses": 9,
+                    "ties": 2,
+                    "games": 22,
+                    "pct": 0.545,
+                    "gb": 8.5,
+                    "rf": 132,
+                    "ra": 136,
+                    "rd": -4,
+                    "divisionRecord": "9 - 5 - 2"
+                },
+                {
+                    "teamId": "69574598e87fdaab96521193",
+                    "name": "Washington Bison",
+                    "wins": 11,
+                    "losses": 11,
+                    "ties": 1,
+                    "games": 23,
+                    "pct": 0.5,
+                    "gb": 9.5,
+                    "rf": 180,
+                    "ra": 175,
+                    "rd": 5,
+                    "divisionRecord": "8 - 3 - 0"
+                },
+                {
+                    "teamId": "6957460cf0d5450f770109b3",
+                    "name": "Northern Virginia Navigators",
+                    "wins": 9,
+                    "losses": 11,
+                    "ties": 2,
+                    "games": 22,
+                    "pct": 0.455,
+                    "gb": 10.5,
+                    "rf": 137,
+                    "ra": 167,
+                    "rd": -30,
+                    "divisionRecord": "8 - 4 - 2"
+                },
+                {
+                    "teamId": "69574598672c8b373f68a1a9",
+                    "name": "Alexandria A's",
+                    "wins": 8,
+                    "losses": 14,
+                    "ties": 1,
+                    "games": 23,
+                    "pct": 0.37,
+                    "gb": 12.5,
+                    "rf": 174,
+                    "ra": 188,
+                    "rd": -14,
+                    "divisionRecord": "4 - 5 - 1"
+                },
+                {
+                    "teamId": "698fdc820f3a7d9290e70210",
+                    "name": "Tren del Norte (TDN)",
+                    "wins": 2,
+                    "losses": 19,
+                    "ties": 1,
+                    "games": 22,
+                    "pct": 0.114,
+                    "gb": 18,
+                    "rf": 90,
+                    "ra": 212,
+                    "rd": -122,
+                    "divisionRecord": "1 - 13 - 1"
                 }
             ]
         }
