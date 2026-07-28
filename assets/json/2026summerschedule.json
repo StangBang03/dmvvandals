@@ -117,20 +117,6 @@
         "has_live_stream": false
       },
       {
-        "event_id": "420f20ce-5299-4d3b-9d31-5c75b5763768",
-        "opponent_team": {
-          "name": "Mallards"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-04-26T13:00:00.000Z",
-        "end_ts": "2026-04-26T16:00:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "home",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": "0d1c371c-348d-44cf-9374-9700da57bacd",
-        "has_live_stream": false
-      },
-      {
         "event_id": "9552f233-c7aa-4e22-92e4-f72fa0db4dca",
         "opponent_team": {
           "name": "Mallards"
@@ -245,34 +231,6 @@
         "has_live_stream": false
       },
       {
-        "event_id": "c305ef9d-1a4a-45a3-9eb4-11779a9247cb",
-        "opponent_team": {
-          "name": "Silver Bullets"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-05-21T00:00:00.000Z",
-        "end_ts": "2026-05-21T03:00:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "away",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": "0d1c371c-348d-44cf-9374-9700da57bacd",
-        "has_live_stream": false
-      },
-      {
-        "event_id": "f230f1a1-aa75-45a8-8e26-49f5424788f2",
-        "opponent_team": {
-          "name": "Navigators"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-05-28T00:00:00.000Z",
-        "end_ts": "2026-05-28T03:00:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "away",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": "Q8cjKS1gVU5j",
-        "has_live_stream": false
-      },
-      {
         "event_id": "5ca38fcf-0951-401c-9faa-5d926ea5ea7a",
         "opponent_team": {
           "name": "A\u2019s"
@@ -368,20 +326,6 @@
         "game_status": "completed"
       },
       {
-        "event_id": "53aec290-0fd7-4ca7-87c9-2901db9343d0",
-        "opponent_team": {
-          "name": "Clementes"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-06-13T13:00:00.000Z",
-        "end_ts": "2026-06-13T16:00:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "home",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": "Q8cjKS1gVU5j",
-        "has_live_stream": false
-      },
-      {
         "event_id": "59af76b0-8554-4f2d-83d5-fcb14b205dc3",
         "opponent_team": {
           "name": "Silver Bullets"
@@ -437,20 +381,6 @@
           "opponent_team": 1
         },
         "game_status": "completed"
-      },
-      {
-        "event_id": "842160a2-3787-4b0c-aecf-5b5b1aac0975",
-        "opponent_team": {
-          "name": "Navigators"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-06-23T00:00:00.000Z",
-        "end_ts": "2026-06-23T03:00:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "home",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": "0d1c371c-348d-44cf-9374-9700da57bacd",
-        "has_live_stream": false
       },
       {
         "event_id": "9564fce1-ae21-4448-9238-1267f72994ae",
@@ -548,34 +478,6 @@
         "game_status": "completed"
       },
       {
-        "event_id": "caaac5f1-1362-4a16-becd-ee89ef8984e3",
-        "opponent_team": {
-          "name": "Bison"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-07-09T00:00:00.000Z",
-        "end_ts": "2026-07-09T02:50:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "home",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": null,
-        "has_live_stream": false
-      },
-      {
-        "event_id": "88314e09-0941-49f0-b125-03a2ff6095cd",
-        "opponent_team": {
-          "name": "Bison"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-07-11T00:00:00.000Z",
-        "end_ts": "2026-07-11T02:50:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "away",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": null,
-        "has_live_stream": false
-      },
-      {
         "event_id": "5d8b93fc-15cc-4983-a31b-9a05ef9c33f2",
         "opponent_team": {
           "name": "Bison"
@@ -593,20 +495,6 @@
           "opponent_team": 0
         },
         "game_status": "completed"
-      },
-      {
-        "event_id": "3b0d8d3f-0811-49ed-b99c-3772a2b7d221",
-        "opponent_team": {
-          "name": "Bison"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-07-11T21:00:00.000Z",
-        "end_ts": "2026-07-11T23:50:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "home",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": null,
-        "has_live_stream": false
       },
       {
         "event_id": "a2f20301-d2ab-41ab-90ff-5c11ed4493e6",
@@ -721,34 +609,6 @@
           "opponent_team": 2
         },
         "game_status": "completed"
-      },
-      {
-        "event_id": "f129ab38-e109-4495-900a-7e327189efa9",
-        "opponent_team": {
-          "name": "Mallards"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-07-28T00:00:00.000Z",
-        "end_ts": "2026-07-28T03:00:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "home",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": "0d1c371c-348d-44cf-9374-9700da57bacd",
-        "has_live_stream": false
-      },
-      {
-        "event_id": "af9ae98a-e110-4f65-87be-7242f2ba9827",
-        "opponent_team": {
-          "name": "Mallards"
-        },
-        "is_full_day": false,
-        "start_ts": "2026-07-30T00:00:00.000Z",
-        "end_ts": "2026-07-30T03:00:00.000Z",
-        "timezone": "America/New_York",
-        "home_away": "away",
-        "organization_name": "DC Wood (Summer 2026)",
-        "organization_public_id": "0d1c371c-348d-44cf-9374-9700da57bacd",
-        "has_live_stream": false
       }
     ],
     "team": {
