@@ -2911,7 +2911,7 @@
 	}
 
 	body.landing #page-wrapper {
-		padding-top: 3.25em;
+		padding-top: 0;
 	}
 
 	@-moz-keyframes reveal-header {
@@ -3185,17 +3185,16 @@
 /* Banner */
 
 	#banner {
-		background-color: #f0dfa8;
+		background-attachment: fixed;
+		background-color: #666;
+		background-image: url("../../images/b2b-large.png");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		color: #fff;
+		padding: 12em 0 20em 0;
 		text-align: center;
-		overflow: hidden;
 	}
-
-		#banner img {
-			display: block;
-			width: 100%;
-			height: auto;
-		}
 
 		#banner :last-child {
 			margin-bottom: 0;
@@ -3332,7 +3331,7 @@
 			}
 
 	body.landing #main {
-		margin-top: 0;
+		margin-top: 0em;
 	}
 
 /* Footer */
@@ -3460,6 +3459,10 @@
 
 		/* Banner */
 
+			#banner {
+				padding: 10em 0 18em 0;
+			}
+
 	}
 
 /* Normal */
@@ -3480,9 +3483,13 @@
 
 		/* Banner */
 
-			#banner h2 {
-				font-size: 3.5em;
+			#banner {
+				background-attachment: scroll;
 			}
+
+				#banner h2 {
+					font-size: 3.5em;
+				}
 
 	}
 
@@ -3811,9 +3818,14 @@
 
 		/* Banner */
 
-			#banner h2 {
-				font-size: 2.25em;
+			#banner {
+				background-image: url("../../images/b2b-small.png");
+				padding: 4em 0;
 			}
+
+				#banner h2 {
+					font-size: 2.25em;
+				}
 
 				#banner p {
 					font-size: 1.25em;
@@ -3948,6 +3960,11 @@
 					}
 
 		/* Banner */
+
+			#banner {
+				background-image: url("../../images/b2b-small.png");
+				padding: 5em 3em 4em 3em;
+			}
 
 		/* Main */
 
